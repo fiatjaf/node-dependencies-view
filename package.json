@@ -1,0 +1,16 @@
+{
+  "name": "node-dependencies-view",
+  "description": "nada",
+  "dependencies": {
+    "viz.js": "^1.8.0",
+    "co-download": "^0.2.0",
+    "decompress": "^4.2.0",
+    "mkdirp": "^0.5.1",
+    "dependency-tree": "^5.9.1",
+    "relative": "^3.0.2",
+    "express": "^4.15.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
