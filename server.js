@@ -4,9 +4,8 @@ const graph = require('./graph')
 
 const app = express()
 
-app.get('/:user/:repo/**', (r, w) => {
-  console.log(r.params)
-  graph(r.params.user, r.params.repo, r.params[0])
+app.get('/:user/:repo', (r, w) => {
+  graph(r.params.user, r.params.repo)
     .then(svg => w.send(svg))
     .catch(console.log)
 })

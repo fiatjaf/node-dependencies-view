@@ -1,0 +1,4 @@
+package-lock.json
+*.swo
+*.swp
+node_modules
