@@ -6,6 +6,8 @@ const graph = require('./graph')
 
 const app = express()
 
+app.get('/', (r, w) => w.redirect('https://github.com/fiatjaf/node-dependencies-view'))
+
 app.get('/:user/:repo', (r, w) => {
   var format = 'svg'
   var repo = r.params.repo
@@ -25,6 +27,7 @@ app.get('/:user/:repo', (r, w) => {
         let lines = dot.split('\n')
         dot = [lines[0], `ratio="${ratio}"`].concat(lines.slice(1)).join('\n')
 
+        w.append('Content-Type', 'image/svg+xml')
         w.append('Cache-Control', 'no-cache')
         w.append('ETag', md5(dot))
         w.send(Viz(dot))
