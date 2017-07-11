@@ -8,6 +8,7 @@
     "dependency-tree": "^5.9.1",
     "express": "^4.15.3",
     "glob": "^7.1.2",
+    "md5": "^2.2.1",
     "mkdirp": "^0.5.1",
     "precinct": "^3.6.0",
     "resolve-from": "^3.0.0",
