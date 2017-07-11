@@ -4,7 +4,7 @@ This repository dependency structure:
 
 ![](https://ndv.glitch.me/fiatjaf/node-dependencies-view.svg?ratio=0.5)
 
-If you want to one in your repo's `README.md` or anywhere else, use a link like this:
+If you want to usr one in your repo's `README.md` or anywhere else, use a link like this:
 
 ```
 https://ndv.glitch.me/ipfs/js-ipfs.svg?ratio=0.2
