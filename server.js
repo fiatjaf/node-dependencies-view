@@ -22,16 +22,22 @@ app.get('/:user/:repo', (r, w) => {
 
   graph(r.params.user, repo)
     .then(dot => {
-      if (format === 'svg') {
-        let ratio = r.query.ratio || '0.1'
-        let lines = dot.split('\n')
-        dot = [lines[0], `ratio="${ratio}"`].concat(lines.slice(1)).join('\n')
+      // add dot parameters
+      r.query.rankdir = r.query.rankdir || 'LR' // default
+      var dotsettings = []
+      for (let k in r.query) {
+        dotsettings.push(`  ${k}="${r.query[k]}"`)
+      }
+      let lines = dot.split('\n')
+      dot = [lines[0]].concat(dotsettings).concat(lines.slice(1)).join('\n')
 
+      if (format === 'svg') {
         w.append('Content-Type', 'image/svg+xml')
         w.append('Cache-Control', 'no-cache')
         w.append('ETag', md5(dot))
         w.send(Viz(dot))
       } else if (format === 'dot') {
+        w.append('Content-Type', 'text/plain')
         w.send(dot)
       } else {
         w.send('this will never happen.')
