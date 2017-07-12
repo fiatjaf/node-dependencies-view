@@ -23,7 +23,7 @@ app.get('/:user/:repo', (r, w) => {
   graph(r.params.user, repo)
     .then(dot => {
       if (format === 'svg') {
-        let ratio = r.query.ratio || '0.5'
+        let ratio = r.query.ratio || '0.1'
         let lines = dot.split('\n')
         dot = [lines[0], `ratio="${ratio}"`].concat(lines.slice(1)).join('\n')
 
