@@ -3,7 +3,6 @@ const glob = require('glob')
 const path = require('path')
 const uniq = require('array-unique')
 const precinct = require('precinct')
-const resolve = require('resolve-from')
 
 module.exports = function (base) {
   var rels = []
@@ -29,7 +28,7 @@ function inspect (file, base) {
     if (req[0] !== '.') {
       deps.push([filerel, 'external', req])
     } else {
-      let rel = '.' + resolve(path.dirname(file), req).slice(base.length)
+      let rel = '.' + path.resolve(path.dirname(file), req).slice(base.length)
       deps.push([filerel, 'local', rel])
     }
   }
