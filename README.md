@@ -20,3 +20,7 @@ The graphs are made with [Viz.js](http://viz-js.com/).
 If you want to browse dependencies (for a lot of languages) better, you should try the [Module Linker](https://fiatjaf.alhur.es/module-linker/) browser extension.
 
 If you want more unrelated sugar in your GitHub `README.md`, you should try https://github.com/tj/gh-polls or https://ght.trackingco.de/.
+
+#### Traffic statistics for this repo:
+
+[![](https://ght.trackingco.de/fiatjaf/node-dependencies-view)](https://ght.trackingco.de/)
